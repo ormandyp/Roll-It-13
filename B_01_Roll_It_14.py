@@ -11,8 +11,26 @@ def yes_no(question):
             print("you did not choose a valid response")
 
 
+# checks that users enter an integer
+# that is more than 13
+def int_check():
+
+    while True:
+        error = "Please enter an integer that is 13 or more."
+
+        try:
+            response = int(input("enter an integer:  "))
+
+            if response < 13:
+                print(error)
+            else:
+                return response
+
+        except ValueError:
+            print(error)
 
 
+# Displays instructions to user
 def instruction():
     print('''
     
@@ -28,19 +46,20 @@ The goal is to get 13 points (or slightly less) for a given round.
 Once you are happy with your number of points, you can ‘pass’.
     
     ''')
+
+
 # main routine
 print()
 print("🎲🎲 Roll it 13 🎲🎲")
 print()
 
-
 # loop for testing purposes
 
 
-want_instructions = yes_no("Do you want to read the instructions? ")
+want_instructions = yes_no("Do you want to read the instructions?")
 
 if want_instructions == "yes":
     instruction()
 
-print("program continues")
-
+print("")
+target_score = int_check()
