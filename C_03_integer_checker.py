@@ -22,3 +22,5 @@ def int_check():
 # main routine goes here
 target_score = int_check()
 print(target_score)
+
+# 8 0.29
