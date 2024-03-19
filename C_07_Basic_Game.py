@@ -1,6 +1,23 @@
 import random
 
 
+def instruction():
+    print('''
+
+**** instructions ****
+
+To begin, decide the overall score needed to be crowned the winner of the game 
+(eg: first person to get a score of 50 or more).
+
+At the start of each round, the user and the computer each roll two dice. 
+The initial number of points for each player is the total shown by the dice. Then, taking turns,
+the user and computer each roll a single die and add the result to their points.
+The goal is to get 13 points (or slightly less) for a given round. 
+Once you are happy with your number of points, you can ‘pass’.
+
+    ''')
+
+
 # generates an integer between 0 and 6
 # to simulate a roll of a die
 def roll_die():
@@ -68,6 +85,18 @@ user_score = 0
 comp_score = 0
 
 num_rounds = 0
+
+print()
+print("🎲🎲 Roll it 13 🎲🎲")
+print()
+
+# loop for testing purposes
+
+
+want_instructions = yes_no("Do you want to read the instructions? ")
+
+if want_instructions == "yes":
+    instruction()
 
 target_score = int_check("Enter a target score: ")
 print(target_score)
